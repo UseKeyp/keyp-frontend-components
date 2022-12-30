@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  name: Styleguidist Deploy
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Install packages
+      run: npm install
+    - name: Build the app w/styleguidist
+      run: styleguidist build
+    - name: Install Surge
+      run: npm install -g surge
+    - name: Deploy to surge
+      run: surge ./styleguide keyp-frontend-components.surge.sh/ --token ${{secrets.TOKEN}}
