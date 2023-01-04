@@ -1,6 +1,6 @@
 import React from "react";
-import SearchBar from "../SearchBar/SearchBar";
-import UserCard from "../UserCard/UserCard";
+import SearchBar from "../SearchBar/SearchBar.js";
+import UserCard from "../UserCard/UserCard.js";
 
 const ContactsList = ({ contacts }) => {
     const [searchTerm, setSearchTerm] = React.useState("");

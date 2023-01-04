@@ -1,4 +1,4 @@
-import Icon from "../Icon/Icon";
+import Icon from "../Icon/Icon.js";
 
 const AccountCard = (props) => {
     const assets = props.assets;
