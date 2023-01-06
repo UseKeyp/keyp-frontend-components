@@ -1,7 +1,8 @@
 import React from "react";
 import {useTable, useGlobalFilter, useAsyncDebounce, useFilters, useSortBy, usePagination} from "react-table";
-import TextInput from "../TextInput/TextInput.js";
-import Icon from "../Icon/Icon.js";
+import regeneratorRuntime from "regenerator-runtime";
+import TextInput from "../TextInput/TextInput.jsx";
+import Icon from "../Icon/Icon.jsx";
 
 /**
  * A search filter for the table

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import AssetSwitcher from "../AssetSwitcher/AssetSwitcher.js";
+import AssetSwitcher from "../AssetSwitcher/AssetSwitcher.jsx";
 import {getETHExchangeRate} from "../../api/getETHExchangeRate.js";
 
 const Keyboard = (props) => {

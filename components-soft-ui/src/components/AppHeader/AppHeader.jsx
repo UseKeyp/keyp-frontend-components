@@ -1,4 +1,4 @@
-import Button from "../Button/Button.js";
+import Button from "../Button/Button.jsx";
 
 /**
  * Generic header for a studio's apps

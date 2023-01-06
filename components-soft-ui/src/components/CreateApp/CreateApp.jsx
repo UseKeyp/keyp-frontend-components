@@ -1,7 +1,7 @@
-import Button from "../Button/Button.js";
-import TextInput from "../TextInput/TextInput.js";
-import Tooltip from "../Tooltip/Tooltip.js";
-import Icon from "../Icon/Icon.js";
+import Button from "../Button/Button.jsx";
+import TextInput from "../TextInput/TextInput.jsx";
+import Tooltip from "../Tooltip/Tooltip.jsx";
+import Icon from "../Icon/Icon.jsx";
 import {useState} from 'react';
 
 /**
