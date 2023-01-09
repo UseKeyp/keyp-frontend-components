@@ -1,5 +1,5 @@
 {
-  "name": "@usekeyp/components-soft-ui-testing",
+  "name": "@usekeyp/components-soft-ui",
   "version": "0.1.0",
   "type": "module",
   "private": false,
@@ -24,9 +24,9 @@
   },
   "scripts": {
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "start": "styleguidist server",
+    "start": "styleguidist server --config styleguide.config.cjs",
     "tailwindcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
-    "build": "styleguidist build",
+    "build": "styleguidist build --config styleguide.config.cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

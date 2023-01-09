@@ -1,5 +1,6 @@
 import React from "react";
 import {useTable, useGlobalFilter, useAsyncDebounce, useFilters, useSortBy, usePagination} from "react-table";
+// eslint-disable-next-line no-unused-vars
 import regeneratorRuntime from "regenerator-runtime";
 import TextInput from "../TextInput/TextInput.jsx";
 import Icon from "../Icon/Icon.jsx";
