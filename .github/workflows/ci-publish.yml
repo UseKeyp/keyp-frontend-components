@@ -1,0 +1,21 @@
+name: Publish Release Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-release:
+    name: Publish released packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v3
+      - name: Publish PR Packages
+        uses: UseKeyp/publish-pr-packages@v1.0.0
+        with:
+          token: ${{ secrets.PAT }}
+          build-command: yarn build
+          packages-directory: packages
+          registry: github
+
