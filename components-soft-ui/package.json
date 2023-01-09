@@ -60,7 +60,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
-    "esbuild-loader": "^2.20.0",
     "eslint": "^8.27.0",
     "file-loader": "^6.2.0",
     "postcss": "^8.4.18",
