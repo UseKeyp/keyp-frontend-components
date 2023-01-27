@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       image_tag_prefix:
-        description: 'Image Tag Prefix (prod or staging)'
+        description: "Image Tag Prefix (prod or staging)"
         required: true
-        default: 'staging'
+        default: "staging"
 env:
   ENVIRONMENT: ${{ github.event.inputs.image_tag_prefix }}
   GITHUB_SHA: ${{ github.sha }}
@@ -76,11 +76,11 @@ jobs:
         with:
           args: 🏭 Building packages for ${{ github.repository }}... `${{ steps.get_version.outputs.VERSION }}`
 
-      - name: Build package
-        shell: bash
         # NOTE: Building is unnecessary for now
-        run: yarn lerna exec --no-bail --no-private -- exit 0
-      
+      # - name: Build package
+      #   shell: bash
+      #   run: yarn && yarn lerna exec --no-bail --no-private -- exit 0
+
       - name: Create packages
         shell: bash
         run: |
@@ -96,7 +96,7 @@ jobs:
           for f in * ; do
             mv -- "$f" "${f%.tgz}-${sha:0:7}.tgz"
           done
-          
+
       - name: Publish packages to registry
         shell: bash
         run: |
