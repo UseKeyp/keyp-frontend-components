@@ -101,7 +101,7 @@ jobs:
         shell: bash
         run: |
           ls -la
-          tasks/npmrc-use-${{ inputs.registry }}.sh > packages/.npmrc # using PAT
+          tasks/npmrc-use-github.sh > packages/.npmrc # using PAT
           cd packages/
           for f in `ls` ; do
             npm --userconfig .npmrc publish $f --tag "latest"
