@@ -84,12 +84,12 @@ jobs:
       - name: Create packages
         shell: bash
         run: |
-          dirName="bin/"
+          dirName="bin"
           mkdir -p $dirName
           for d in packages/*/ ; do (
             cd "$d"
             tgz=$(npm pack)
-            cp $tgz "../$dirName"
+            cp $tgz "../$dirName/"
           ) done
           cd $dirName
           sha="${{ github.event.pull_request.head.sha }}"
