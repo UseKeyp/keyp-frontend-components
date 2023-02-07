@@ -6,10 +6,22 @@
  * @param {string} size: Options: small, regular (Default)
  **/
 const TextInput = (props) => {
-    return (<input type="text"
-                   onChange={props.onChange}
-                   className={`${props.variant} ${props.value} w-full ${props.size === 'small' ? 'h-[32px]' : 'h-[48px]'} pl-4 text-sm focus:shadow-soft-sm ease-soft leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding pr-3 text-gray-700 transition-all placeholder:text-gray-300 focus:border-green-400 focus:outline-none focus:transition-shadow`}
-                   placeholder={props.placeholder}/>);
+    return (
+        <input
+            type="text"
+            onChange={props.onChange}
+            className={`${props.value} w-full ${
+                props.size === 'small' ? 'h-[32px]' : 'h-[48px]'
+            } leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding pl-4 pr-3 text-sm text-gray-700 transition-all ease-soft placeholder:text-gray-300 focus:border-green-400 focus:shadow-soft-sm focus:outline-none focus:transition-shadow ${
+                props.variant
+            }`}
+            value={props.value}
+            readOnly={props.readOnly}
+            disabled={props.disabled}
+            placeholder={props.placeholder}
+            id={props.id}
+        />
+    )
 }
 
-export default TextInput;
+export default TextInput

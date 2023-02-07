@@ -1,0 +1,145 @@
+import { useState } from 'react'
+
+import { useMutation } from '@redwoodjs/web'
+import { toast } from '@redwoodjs/web/toast'
+
+import Icon from '../Icon/Icon.jsx'
+import Tooltip from '../Tooltip/Tooltip.jsx'
+import URLRedirects from '../URLRedirects/URLRedirects.jsx'
+import gql from 'graphql-tag'
+
+const CREATE_ClIENT = gql`
+  mutation CreateContactMutation {
+    createClient {
+      id
+    }
+  }
+`
+
+const ClientCredentials = ({ client }) => {
+    const [createClient, { loading, error }] = useMutation(CREATE_ClIENT, {
+        onCompleted: () => {
+            toast.success('Client created!')
+        },
+    })
+    const [showEditSection, setShowEditSection] = useState(false)
+    const [copySuccess, setCopySuccess] = useState('Copy ID')
+    function handleCopy() {
+        navigator.clipboard.writeText(client?.id)
+        setCopySuccess('Copied!')
+        setTimeout(() => {
+            setCopySuccess('Click to copy key')
+        }, 2000)
+    }
+
+    return (
+        <div className="mt-4 flex w-full flex-col overflow-auto rounded-md border border-gray-800 p-4">
+            <div>
+                <div key={client.id}>
+                    <div className="flex flex-row justify-between">
+                        {client.payload.client_name ? (
+                            <div className="mb-4 text-lg font-bold text-gray-1600">
+                                {client.payload.client_name}
+                            </div>
+                        ) : (
+                            <div className="mb-4 text-lg font-bold text-gray-1600">
+                                New Client
+                            </div>
+                        )}
+                        {showEditSection ? (
+                            <button
+                                onClick={() => {
+                                    setShowEditSection(false)
+                                }}
+                                className="flex font-light text-blue-1200"
+                            >
+                                Close
+                            </button>
+                        ) : (
+                            <button
+                                onClick={() => setShowEditSection(true)}
+                                className="flex font-light text-blue-1200"
+                            >
+                                Edit
+                            </button>
+                        )}
+                    </div>
+                    <div className="flex w-full flex-row justify-between">
+                        <div className="flex flex-col">
+                            <div className="flex gap-x-1 text-xs text-gray-800">
+                                CLIENT ID
+                                <Tooltip
+                                    id="client-id"
+                                    delayHideTime={250}
+                                    effect="float"
+                                    borderColor="#C6CED2"
+                                    bgColor="#eef0f2"
+                                    position="top"
+                                    tooltipChild={
+                                        <div className="p-1 text-black">
+                                            Copy this into your app
+                                        </div>
+                                    }
+                                >
+                                    <Icon color="fill-gray-800" name="tooltip" />
+                                </Tooltip>
+                            </div>
+                            <div className="flex flex-row gap-x-2">
+                                <div className="flex font-light">{client.id}</div>
+                                <button
+                                    className="flex"
+                                    onClick={() => {
+                                        handleCopy()
+                                    }}
+                                >
+                                    <Tooltip
+                                        id="client-secret"
+                                        delayHideTime={250}
+                                        effect="float"
+                                        borderColor="#C6CED2"
+                                        bgColor="#eef0f2"
+                                        position="top"
+                                        tooltipChild={
+                                            <div className="text-black">{copySuccess}</div>
+                                        }
+                                    >
+                                        <Icon color="fill-blue-1200" name="copy" />
+                                    </Tooltip>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="flex gap-x-3">
+                            <div className="flex flex-col">
+                                {client?.createdBy ? (
+                                    <div className="flex flex-col">
+                                        <div className="flex text-xs text-gray-800">CREATED BY</div>
+                                        <div className="flex font-light">{client.createdBy}</div>
+                                    </div>
+                                ) : (
+                                    <></>
+                                )}
+                            </div>
+                            <div className="flex flex-col">
+                                <div className="flex gap-x-1 text-xs text-gray-800">
+                                    CREATED
+                                </div>
+                                <div className="flex font-light">{client.createdAt}</div>
+                            </div>
+                            <div className="flex flex-col">
+                                <div className="flex gap-x-1 text-xs text-gray-800">
+                                    LAST USED
+                                </div>
+                                <div className="flex font-light">{client.updatedAt}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <URLRedirects client={client} showEditSection={showEditSection} />
+                </div>
+            </div>
+            <div className="flex w-full flex-row justify-between gap-x-2">
+            </div>
+        </div>
+    )
+}
+
+export default ClientCredentials

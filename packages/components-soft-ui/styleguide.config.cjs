@@ -49,6 +49,9 @@ const webpackConfig = {
             /react-styleguidist\/lib\/loaders\/utils\/client\/evalInContext$/,
             'react-styleguidist/lib/loaders/utils/client/evalInContext'
         ),
+        new webpack.DefinePlugin({
+            process: {env: {}}
+        }),
     ],
 };
 
