@@ -1,5 +1,6 @@
-import {Link} from '@redwoodjs/router'
 import PropTypes from 'prop-types'
+
+import { Link } from '@redwoodjs/router'
 
 /**
  * Generic button component
@@ -32,19 +33,25 @@ const Button = ({
                     href,
                     alt,
                     classNameVariant,
+                    position,
                     ...rest
                 }) => {
     const Element = href ? 'a' : 'button'
     if (to) {
         return (
-            <Link className={`flex justify-center items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]  
-            ${textColor ? textColor : 'text-white'} 
+            <Link
+                className={`group flex rounded-[6px] text-center text-lg font-bold leading-button tracking-wide
+            ${position === 'start' ? 'items-center justify-start' : ''}
+            ${position === 'middle' ? 'items-center justify-center' : ''}
+            ${position === 'end' ? 'items-center justify-end' : ''}
+            ${!position ? 'items-center justify-center' : ''}
+            ${textColor ? textColor : 'text-white'}
             ${size === 'regular' && !fluid ? 'h-[48px] w-[200px]' : ''}
             ${size === 'small' && !fluid ? 'h-[32px] w-[200px]' : ''}
             ${size === 'square' && !fluid ? 'h-[48px] w-[48px]' : ''}
             ${fluid && 'h-[48px] w-full'}
             ${borderColor ? borderColor : ''}
-            ${variant === 'transparent' ? 'bg-transparent' : ''} 
+            ${variant === 'transparent' ? 'bg-transparent' : ''}
             ${variant === 'grey' ? 'bg-gray-1200 hover:bg-gray-2000' : ''}
             ${variant === 'green' ? 'bg-green-1200 hover:bg-green-1800' : ''}
             ${variant === 'blue' ? 'bg-blue-1200 hover:bg-blue-2000' : ''}
@@ -52,44 +59,48 @@ const Button = ({
             ${variant === 'black' ? 'bg-black' : ''}
             ${classNameVariant ? classNameVariant : ''}
             `}
-                  onClick={() => onClick()}
-                  data-variant={variant}
-                  data-size={size}
-                  data-textcolor={textColor}
-                  data-fluid={String(fluid)}
-                  to={to}
-                  {...rest}
+                onClick={() => onClick()}
+                data-variant={variant}
+                data-size={size}
+                data-textcolor={textColor}
+                data-fluid={String(fluid)}
+                to={to}
+                {...rest}
             >
                 {label || children}
             </Link>
         )
     }
 
-
     return (
-        <Element className={`flex justify-center items-center group text-center text-lg leading-button font-bold tracking-wide rounded-[6px]
-            ${textColor ? textColor : 'text-white'} 
+        <Element
+            className={`group flex rounded-[6px] text-center text-lg font-bold leading-button tracking-wide
+            ${position === 'start' ? 'items-center justify-start' : ''}
+            ${position === 'middle' ? 'items-center justify-center' : ''}
+            ${position === 'end' ? 'items-center justify-end' : ''}
+            ${!position ? 'items-center justify-center' : ''}
+            ${textColor ? textColor : 'text-white'}
             ${size === 'regular' && !fluid ? 'h-[48px] w-[200px]' : ''}
             ${size === 'small' && !fluid ? 'h-[32px] w-[200px]' : ''}
             ${size === 'square' && !fluid ? 'h-[48px] w-[48px]' : ''}
             ${fluid && 'h-[48px] w-full'}
             ${borderColor ? 'border ' + borderColor : ''}
-            ${variant === 'transparent' ? 'bg-transparent' : ''} 
+            ${variant === 'transparent' ? 'bg-transparent' : ''}
             ${variant === 'grey' ? 'bg-gray-1200 hover:bg-gray-2000' : ''}
             ${variant === 'green' ? 'bg-green-1200 hover:bg-green-1800' : ''}
             ${variant === 'blue' ? 'bg-blue-1200 hover:bg-blue-2000' : ''}
             ${variant === 'white' ? 'bg-white' : ''}
             ${variant === 'black' ? 'bg-black' : ''}
-            ${classNameVariant ? classNameVariant : ''} 
+            ${classNameVariant ? classNameVariant : ''}
             `}
-                 onClick={() => onClick()}
-                 data-variant={variant}
-                 data-size={size}
-                 data-textcolor={textColor}
-                 data-fluid={String(fluid)}
-                 href={href || ''}
-                 alt={alt || ''}
-                 {...rest}
+            onClick={() => onClick()}
+            data-variant={variant}
+            data-size={size}
+            data-textcolor={textColor}
+            data-fluid={String(fluid)}
+            href={href || ''}
+            alt={alt || ''}
+            {...rest}
         >
             {label || children}
         </Element>
@@ -101,8 +112,7 @@ Button.defaultProps = {
     size: 'regular',
     textColor: 'text-white',
     fluid: false,
-    onClick: () => {
-    },
+    onClick: () => {},
 }
 
 Button.propTypes = {
@@ -115,6 +125,9 @@ Button.propTypes = {
     to: PropTypes.any,
     href: PropTypes.string,
     alt: PropTypes.string,
+    classNameVariant: PropTypes.string,
+    borderColor: PropTypes.string,
+    position: PropTypes.string,
 }
 
 export default Button
