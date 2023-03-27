@@ -7,7 +7,6 @@ const ItemDescriptionCell = ({
                                         tokenOrAddress,
                                         description,
                                         children,
-                                        tooltipID,
                                     }) => {
     const [copySuccess, setCopySuccess] = useState('Copy')
     function handleCopy() {
@@ -37,7 +36,7 @@ const ItemDescriptionCell = ({
                                         }}
                                     >
                                         <Tooltip
-                                            id={tooltipID}
+                                            id={'copy ' + tokenOrAddress}
                                             delayHideTime={250}
                                             effect="solid"
                                             borderColor="#C6CED2"

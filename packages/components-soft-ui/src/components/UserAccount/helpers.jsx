@@ -35,6 +35,11 @@ export function getStyledUsernameFromCurrentUser(currentUser, sizeVariant) {
                     <div className="text-[#9146FF]">{currentUser?.username}</div>
                 </div>
             )
+        case 'epic_games':
+            return (
+                <div className={`flex ${sizeVariant || 'text-[12px]'}`}>
+                    <div className="text-[#2F2D2E]">{currentUser?.username}</div>
+                </div>)
         default:
             return (
                 <div className={`flex text-gray-2000 ${sizeVariant || 'text-[12px]'}`}>
@@ -85,6 +90,11 @@ export function getProviderIconFromCurrentUser(currentUser) {
                     <Icon height="9.75" width="12" name="keypcircle" />
                 </div>
             )
+        case 'epic_games':
+            return (
+                <div className="flex">
+                    <Icon height="9.75" width="12" name="epic_games" />
+                </div>)
         default:
             return <></>
     }
