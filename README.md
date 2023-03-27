@@ -8,10 +8,10 @@ directory.
 ## Usage 📖
 
 1. Clone the repo and run `yarn install` to install the necessary dependencies. Make sure you're using a recent version of node (>= 16.0.0)
-2. Navigate to the root directory of `components-soft-ui` and run `yarn start`. This script starts the styleguidist
-   server.
-3. In the same directory, run `yarn tailwindcss`. This script ensures our Tailwind styles are built and available to the
+2. Navigate to the root directory of `components-soft-ui` and run `yarn tailwindcss`. This script ensures our Tailwind styles are built and available to the
    styleguidist server.
+3. In the same directory, run `yarn start`. This script starts the styleguidist
+   server.
 4. Your server should now be running successfully!
 
 ### Deploying with Surge

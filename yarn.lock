@@ -1033,6 +1033,14 @@
     core-js-pure "^3.25.1"
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime-corejs3@7.21.0":
+  version "7.21.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.21.0.tgz#6e4939d9d9789ff63e2dc58e88f13a3913a24eba"
+  integrity sha512-TDD4UJzos3JJtM+tHX+w2Uc+KWj7GV+VKKFdMVd2Rx8sdA19hcc3P3AHFYd5LVOw+pYuSd5lICC3gm52B6Rwxw==
+  dependencies:
+    core-js-pure "^3.25.1"
+    regenerator-runtime "^0.13.11"
+
 "@babel/runtime-corejs3@^7.10.2":
   version "7.20.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.20.1.tgz#d0775a49bb5fba77e42cbb7276c9955c7b05af8d"
@@ -2588,6 +2596,16 @@
   dependencies:
     "@babel/runtime-corejs3" "7.19.4"
     core-js "3.25.5"
+
+"@redwoodjs/forms@^4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/forms/-/forms-4.3.1.tgz#5502ab3ca5c6f2ffa34631ab210ce3e79f48affa"
+  integrity sha512-YVtvEGmigP9dxkHD0HH1QsZTm85cFsQm38G7drJPLrJvi2mbPhWsmtHf//uWFS+7zNOWYlU0eDhV7Bit7wWOmA==
+  dependencies:
+    "@babel/runtime-corejs3" "7.21.0"
+    core-js "3.29.0"
+    pascalcase "1.0.0"
+    react-hook-form "7.42.1"
 
 "@redwoodjs/router@^3.3.0":
   version "3.3.0"
@@ -4939,6 +4957,11 @@ core-js@3.25.5:
   version "3.25.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.5.tgz#e86f651a2ca8a0237a5f064c2fe56cef89646e27"
   integrity sha512-nbm6eZSjm+ZuBQxCUPQKQCoUEfFOXjUZ8dTTyikyKaWrTYmAVbykQfwsKE5dBK88u3QCkCrzsx/PPlKfhsvgpw==
+
+core-js@3.29.0:
+  version "3.29.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.29.0.tgz#0273e142b67761058bcde5615c503c7406b572d6"
+  integrity sha512-VG23vuEisJNkGl6XQmFJd3rEG/so/CNatqeE+7uZAwTSwFeB/qaO0be8xZYUNWprJ/GIwL8aMt9cj1kvbpTZhg==
 
 core-js@^3.19.2, core-js@^3.6.4:
   version "3.26.0"
@@ -10035,6 +10058,11 @@ pascal-case@^3.1.2:
     no-case "^3.0.4"
     tslib "^2.0.3"
 
+pascalcase@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-1.0.0.tgz#d2fd7d73f2969606d2b56e17f5261be41c43c381"
+  integrity sha512-BSExi0rRnCHReJys6NocaK+cfTXNinAegfWBvr0JD3hiaEG7Nuc7r0CIdOJunXrs8gU/sbHQ9dxVAtiVQisjmg==
+
 path-exists@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-3.0.0.tgz#ce0ebeaa5f78cb18925ea7d810d7b59b010fd515"
@@ -11048,6 +11076,11 @@ react-group@^3.0.2:
   dependencies:
     prop-types "^15.7.2"
 
+react-hook-form@7.42.1:
+  version "7.42.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.42.1.tgz#c6396ca684716d89abc1c7e64343badfd30c56c6"
+  integrity sha512-2UIGqwMZksd5HS55crTT1ATLTr0rAI4jS7yVuqTaoRVDhY2Qc4IyjskCmpnmdYqUNOYFy04vW253tb2JRVh+IQ==
+
 react-icons@^3.8.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.11.0.tgz#2ca2903dfab8268ca18ebd8cc2e879921ec3b254"
@@ -11389,6 +11422,11 @@ regenerator-runtime@^0.13.10, regenerator-runtime@^0.13.4, regenerator-runtime@^
   version "0.13.10"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.10.tgz#ed07b19616bcbec5da6274ebc75ae95634bfc2ee"
   integrity sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==
+
+regenerator-runtime@^0.13.11:
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
+  integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
 
 regenerator-transform@^0.15.0:
   version "0.15.0"
