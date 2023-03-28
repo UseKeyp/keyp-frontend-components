@@ -53,15 +53,17 @@ const ExampleForm = () => {
                         errorClassName="error"
                         style={{
                             color: '#E45200',
-                            maxWidth: '200px',
                             textAlign: 'left',
+                            paddingTop: '16px',
                         }}
                     >{error}</span>
                 ) : <></>}
+                {success && (
+                    <div style={{ color: 'green',
+                        textAlign: 'left',
+                        paddingTop: '16px', }}>Form submitted successfully!</div>
+                )}
             </Form>
-            {success && (
-                <div style={{ color: 'green' }}>Form submitted successfully!</div>
-            )}
             <div className="flex gap-x-4 mt-12">
             <button className="flex border border-black rounded-lg p-2" onClick={() => {setError(''); setSuccess(true)}}>Test success</button>
             <button className="flex border border-black rounded-lg p-2" onClick={() => {setSuccess(false); setError('Test error message')}}>Test error</button>

@@ -16,7 +16,7 @@ jobs:
           node-version: '18'
       - name: Install packages
         working-directory: ./packages/components-soft-ui
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Generate CSS Output
         working-directory: ./packages/components-soft-ui
         run: npx tailwindcss -i ./src/index.css -o ./dist/output.css
