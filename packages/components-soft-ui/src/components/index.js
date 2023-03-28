@@ -17,6 +17,8 @@ import AssetSwitcher from './AssetSwitcher/AssetSwitcher.jsx';
 import Keyboard from './Keyboard/Keyboard.jsx';
 import SearchBar from './SearchBar/SearchBar.jsx';
 import ContactsList from './ContactsList/ContactsList.jsx';
+import UserAccount from './UserAccount/UserAccount.jsx';
+import ItemDescriptionCell from "./ItemDescriptionCell/ItemDescriptionCell.jsx";
 
 export {
     Button,
@@ -37,5 +39,7 @@ export {
     AssetSwitcher,
     Keyboard,
     ContactsList,
-    SearchBar
+    SearchBar,
+    UserAccount,
+    ItemDescriptionCell
 }

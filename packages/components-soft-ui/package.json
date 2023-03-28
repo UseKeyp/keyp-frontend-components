@@ -5,6 +5,7 @@
   "private": false,
   "main": "src/components/index.js",
   "dependencies": {
+    "@redwoodjs/forms": "^4.3.1",
     "@redwoodjs/router": "^3.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
