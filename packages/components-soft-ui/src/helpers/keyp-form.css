@@ -1,6 +1,6 @@
 @layer base {
     form {
-        @apply flex flex-col;
+        @apply flex flex-col border border-gray-800 rounded-[6px] p-4;
     }
 
     form label {
@@ -8,19 +8,23 @@
     }
 
     form input[type="text"] {
-        @apply h-[48px] relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding pl-4 pr-3 text-sm text-gray-700 transition-all ease-soft placeholder:text-gray-300 focus:border-green-400 focus:outline-none focus:transition-shadow;
+        @apply h-[48px] text-base relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding pl-4 pr-3 text-gray-700 transition-all ease-soft placeholder:text-gray-400 focus:border-green-400 focus:outline-none focus:transition-shadow;
     }
 
     form textarea {
-        @apply h-[48px] relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding pl-2 pr-3 text-sm text-gray-700 transition-all ease-soft placeholder:text-gray-300 focus:border-green-400 focus:outline-none focus:transition-shadow;
+        @apply h-[48px] relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding pl-2 pr-3 text-sm text-gray-700 transition-all ease-soft placeholder:text-gray-400 focus:border-green-400 focus:outline-none focus:transition-shadow;
     }
 
     form span.error {
-        @apply text-red-1200 text-[12px] font-normal;
+        @apply inline-block text-red-1200 text-[12px] font-normal pl-[8px];
+    }
+
+    form span.error::first-letter {
+        @apply uppercase;
     }
 
     form input.error {
-        @apply text-red-1200 hover:border-gray-300 focus:border-gray-300;
+        @apply text-red-1200 text-base hover:border-gray-300 focus:border-gray-300;
     }
 
     form button[type="submit"] {
