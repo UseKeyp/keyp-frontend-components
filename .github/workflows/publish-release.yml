@@ -98,7 +98,7 @@ jobs:
           tasks/npmrc-use-github.sh > packages/.npmrc # using PAT
           cd packages/
           for f in `ls` ; do
-            npm --userconfig publish --registry=https://npm.pkg.github.com/ $f --tag "latest"
+            npm --userconfig .npmrc publish --registry=https://npm.pkg.github.com/ $f --tag "latest"
           done
         env:
           PAT: ${{ secrets.PAT }}
