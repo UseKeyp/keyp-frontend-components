@@ -96,11 +96,3 @@ jobs:
             ## Added
             ## Fixes
             ## Breaking
-
-      - name: Discord notify release draft
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
-        uses: Ilshidur/action-discord@0c4b27844ba47cb1c7bee53 9c8eead5284ce9fa9
-        with:
-          args: |
-            🗒️ Draft Release created for `${{ github.repository }}` __${{ needs.update-version.outputs.VERSION }}__ ${{ steps.create_release.outputs.html_url }}
