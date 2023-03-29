@@ -1,3 +1,4 @@
 cat <<EOF
-//registry.npmjs.org/:_authToken=${NPMJS_TOKEN}
+@usekeyp:registry=https://npm.pkg.github.com/
+//registry.npmjs.org/:_authToken=dummy
 EOF
