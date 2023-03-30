@@ -99,7 +99,7 @@ jobs:
           cd packages/
           for f in `ls` ; do (
             cd "$f"
-            npm --userconfig=~/.npmrc publish --registry=registry.npmjs.org/:_authToken=${NPM_TOKEN} --tag "latest"
+            npm --userconfig=~/.npmrc publish --registry=registry.npmjs.org/:_authToken=${PAT} --tag "latest"
           ) done
         env:
           PAT: ${{ secrets.PAT }}
