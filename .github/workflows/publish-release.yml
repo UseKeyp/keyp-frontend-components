@@ -99,7 +99,7 @@ jobs:
           cd packages/
           for f in `ls` ; do (
             cd "$f"
-            npm publish --tag "latest"
+            npm --userconfig .npmrc publish $f --tag "latest"
           ) done
         env:
           PAT: ${{ secrets.PAT }}
