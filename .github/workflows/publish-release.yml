@@ -97,7 +97,6 @@ jobs:
           ls -la
           tasks/npmrc-use-github.sh > packages/.npmrc # using PAT
           cd packages/
-          npm adduser
           for f in `ls` ; do (
             cd "$f"
             npm --userconfig .npmrc publish --registry=https://npm.pkg.github.com/@usekeyp --tag "latest"
