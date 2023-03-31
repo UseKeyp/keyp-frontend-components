@@ -18,7 +18,11 @@ import Keyboard from './Keyboard/Keyboard.jsx';
 import SearchBar from './SearchBar/SearchBar.jsx';
 import ContactsList from './ContactsList/ContactsList.jsx';
 import UserAccount from './UserAccount/UserAccount.jsx';
+import {getStyledUsernameFromCurrentUser} from "./UserAccount/helpers.jsx";
+import {getProviderIconFromCurrentUser} from "./UserAccount/helpers.jsx";
 import ItemDescriptionCell from "./ItemDescriptionCell/ItemDescriptionCell.jsx";
+import MoreAccordion from "./MoreAccordion/MoreAccordion.jsx";
+import Footer from "./Footer/Footer.jsx";
 
 export {
     Button,
@@ -41,5 +45,9 @@ export {
     ContactsList,
     SearchBar,
     UserAccount,
-    ItemDescriptionCell
+    ItemDescriptionCell,
+    MoreAccordion,
+    Footer,
+    getStyledUsernameFromCurrentUser,
+    getProviderIconFromCurrentUser
 }
