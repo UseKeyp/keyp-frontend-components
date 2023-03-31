@@ -104,7 +104,6 @@ jobs:
           cd packages/
           ls -la
           for f in `ls` ; do (
-            cd "$f"
             npm --userconfig .npmrc publish $f --tag "latest"
           ) done
         env:
