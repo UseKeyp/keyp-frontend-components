@@ -63,7 +63,7 @@ jobs:
           VERSION=v$(jq -r .version lerna.json)
           echo "::set-output name=VERSION::$VERSION"
           echo "::set-output name=IS_PRERELEASE::$IS_PRERELEASE"
-          
+
       - name: Update version Fallback
         # If no prerelease exists, then --conventional-graduate would fail
         if: ${{ format('{0} == "failure" && {1} == "main"', steps.update_version.outcome, github.ref_name) }}
@@ -96,3 +96,10 @@ jobs:
             ## Added
             ## Fixes
             ## Breaking
+      - name: Discord notify release draft
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_RELEASE }}
+        uses: Ilshidur/action-discord@0c4b27844ba47cb1c7bee539c8eead5284ce9fa9
+        with:
+          args: |
+            🗒️ Draft Release created for `${{ github.repository }}` __${{ needs.update-version.outputs.VERSION }}__ ${{ steps.create_release.outputs.html_url }}
