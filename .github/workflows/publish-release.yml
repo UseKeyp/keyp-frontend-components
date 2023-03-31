@@ -103,7 +103,6 @@ jobs:
           tasks/npmrc-use-github.sh > packages/.npmrc # using PAT
           cd packages/
           ls -la
-          ls
           for f in `ls` ; do (
             echo $f
             npm --userconfig .npmrc publish "$f"/ --tag "latest"
