@@ -106,7 +106,7 @@ jobs:
           ls
           for f in `ls` ; do (
             echo $f
-            npm --userconfig .npmrc publish $f --tag "latest"
+            npm --userconfig .npmrc publish "$f" --tag "latest"
           ) done
         env:
           PAT: ${{ secrets.PAT }}
