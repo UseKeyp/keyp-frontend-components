@@ -1,23 +1,55 @@
-import {getProviderIconFromCurrentUser, getStyledUsernameFromCurrentUser} from "./helpers.jsx";
+import { getProviderIconFromCurrentUser, getStyledUsernameFromCurrentUser, trimAddress } from "./helpers.jsx";
+import Tooltip from "../Tooltip/Tooltip.jsx";
+import Icon from "../Icon/Icon.jsx";
+import { useState } from "react";
 
-const UserAccount = ({ currentUser, logOut }) => {
-    return (
-        <div
-            className={`my-auto flex w-full sm:w-auto flex-row items-center justify-between gap-x-16 rounded-md border border-gray-400 p-2 ${
-                currentUser?.username ? 'sm:gap-x-4' : 'sm:gap-x-2'
-            }`}
+const UserAccount = ({currentUser, logOut}) => {
+    const [copySuccess, setCopySuccess] = useState('Click to copy address');
+
+    function handleCopy() {
+        navigator.clipboard.writeText(currentUser?.address);
+        setCopySuccess('Copied!');
+        setTimeout(() => {
+            setCopySuccess('Click to copy address');
+        }, 2000);
+    }
+
+    return (<div
+            className={`my-auto flex w-full sm:w-auto flex-row items-center justify-between rounded-md border border-gray-400 p-2 ${currentUser?.username ? 'sm:gap-x-4' : 'sm:gap-x-2'}`}
         >
             <div className="flex flex-row items-center gap-x-2">
                 {getProviderIconFromCurrentUser(currentUser)}
                 {getStyledUsernameFromCurrentUser(currentUser) || <></>}
             </div>
+            <div className="flex flex-row items-center gap-x-1">
+                <div className="text-[12px] font-normal text-gray-2000">
+                    {trimAddress(currentUser?.address)}
+                </div>
+                <button className="flex" onClick={() => {
+                    handleCopy()
+                }}
+                ><Tooltip id={'wallet-address-' + currentUser?.address}
+                          delayHideTime={250}
+                          effect="solid"
+                          borderColor="#C6CED2"
+                          bgColor="#eef0f2"
+                          position="top"
+                          tooltipChild={<div
+                              className="text-gray-2400">
+                              {copySuccess}
+                          </div>}>
+                    <Icon
+                        color="fill-blue-1200 group-hover:fill-blue-1600 h-[12px] w-[10px]"
+                        name="copy"
+                    /> </Tooltip>
+                </button>
+            </div>
             <button
-                className="text-[12px] font-light text-gray-400 hover:text-red-1200"
+                className="text-[12px] font-normal text-gray-1200 hover:text-red-1200"
                 onClick={logOut}
             >
                 Logout
             </button>
-        </div>
-    )
+        </div>)
 }
 export default UserAccount

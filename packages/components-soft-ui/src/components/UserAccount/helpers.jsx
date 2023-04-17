@@ -1,4 +1,9 @@
-import {Icon} from "../index.js";
+import { Icon } from "../index.js";
+
+export const trimAddress = (address) => {
+    if (typeof address !== 'string') return ''
+    return address.substring(0, 5) + '...' + address.substring(38, 42)
+}
 
 export function getStyledUsernameFromCurrentUser(currentUser, sizeVariant) {
     if (!currentUser?.id) {
