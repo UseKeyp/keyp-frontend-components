@@ -45,6 +45,24 @@ export function getStyledUsernameFromCurrentUser(currentUser, sizeVariant) {
                 <div className={`flex ${sizeVariant || 'text-[12px]'}`}>
                     <div className="text-[#2F2D2E]">{currentUser?.username}</div>
                 </div>)
+        case 'reddit':
+            return (
+                <div className={`flex ${sizeVariant || 'text-[12px]'}`}>
+                    <div className="text-[#FF4500]">{currentUser?.username}</div>
+                </div>
+            )
+        case 'telegram':
+            return (
+                <div className={`flex ${sizeVariant || 'text-[12px]'}`}>
+                    <div className="text-[#0088CC]">{currentUser?.username}</div>
+                </div>
+            )
+        case 'microsoft':
+            return (
+                <div className={`flex ${sizeVariant || 'text-[12px]'}`}>
+                    <div className="text-[#2F2D2E]">{currentUser?.username}</div>
+                </div>
+            )
         default:
             return (
                 <div className={`flex text-gray-2000 ${sizeVariant || 'text-[12px]'}`}>
@@ -99,6 +117,21 @@ export function getProviderIconFromCurrentUser(currentUser) {
             return (
                 <div className="flex">
                     <Icon height="9.75" width="12" name="epic_games" />
+                </div>)
+        case 'reddit':
+            return (
+                <div className="flex mt-0.5">
+                    <Icon height="9.75" width="12" name="reddit" />
+                </div>)
+        case 'telegram':
+            return (
+                <div className="flex mt-0.5">
+                    <Icon height="9.75" width="12" name="telegram" />
+                </div>)
+        case 'microsoft':
+            return (
+                <div className="flex mt-0.5">
+                    <Icon height="9.75" width="12" name="microsoft" />
                 </div>)
         default:
             return <></>
