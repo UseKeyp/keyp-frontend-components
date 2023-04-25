@@ -51,10 +51,10 @@ export function getStyledUsernameFromCurrentUser(currentUser, sizeVariant) {
                     <div className="text-[#FF4500]">{currentUser?.username}</div>
                 </div>
             )
-        case 'telegram':
+        case 'facebook':
             return (
                 <div className={`flex ${sizeVariant || 'text-[12px]'}`}>
-                    <div className="text-[#0088CC]">{currentUser?.username}</div>
+                    <div className="text-[#3B5998]">{currentUser?.username}</div>
                 </div>
             )
         case 'microsoft':
@@ -123,10 +123,10 @@ export function getProviderIconFromCurrentUser(currentUser) {
                 <div className="flex mt-0.5">
                     <Icon height="9.75" width="12" name="reddit" />
                 </div>)
-        case 'telegram':
+        case 'facebook':
             return (
                 <div className="flex mt-0.5">
-                    <Icon height="9.75" width="12" name="telegram" />
+                    <Icon height="9.75" width="12" name="facebook" />
                 </div>)
         case 'microsoft':
             return (
