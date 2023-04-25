@@ -186,10 +186,10 @@ const loading = false;
             </div>
         </Button>
         <Button
-            onClick={() => onSubmitSignUp('TELEGRAM')}
-            disabled={loading === 'TELEGRAM'}
+            onClick={() => onSubmitSignUp('FACEBOOK')}
+            disabled={loading === 'FACEBOOK'}
             classNameVariant={`${
-                loading === 'TELEGRAM'
+                loading === 'FACEBOOK'
                     ? 'bg-[#E9EBED] border-[#E9EBED] justify-center'
                     : 'hover:bg-[#E9EBED] hover:border-[#E9EBED] justify-center'
             }`}
@@ -197,14 +197,14 @@ const loading = false;
             fluid={false}
             size="square"
             position="start"
-            alt="telegram"
+            alt="facebook"
         >
             <div className="group flex flex-row gap-x-4 hover:text-white">
                 <div className="flex">
                     <Icon
                         height="24"
                         width="24"
-                        name="telegram"
+                        name="facebook"
                     />
                 </div>
             </div>
