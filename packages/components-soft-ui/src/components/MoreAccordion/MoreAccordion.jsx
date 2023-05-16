@@ -11,16 +11,16 @@ const MoreAccordion = ({ title, open, children }) => {
                 className="flex cursor-pointer items-center justify-between px-3 pt-3.5"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <h2 className="text-lg font-bold font-normal text-gray-2400">
+                <h2 className="text-lg font-normal text-gray-2400">
                     {title}
                 </h2>
-                <button className="flex items-center justify-center rounded-full">
+                <div className="flex items-center justify-center rounded-full">
                     {isOpen ? (
                         <Icon name="arrow_up" height="8" width="14" />
                     ) : (
                         <Icon name="arrow_down" height="8" width="14" />
                     )}
-                </button>
+                </div>
             </button>
             {isOpen && <div className="flex pt-4 pb-4">{children}</div>}
         </div>
