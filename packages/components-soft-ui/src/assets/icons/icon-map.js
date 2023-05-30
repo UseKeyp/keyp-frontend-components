@@ -745,19 +745,34 @@ const EpicGames = ({ height = "24", width = "24", loading, disabled }) => {
     );
   };
 
-const Facebook = ({ width = "24", height = "24" }) => {
-    return (<svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_519_1487)">
-                <path d="M23.4965 0H0.503498C0.225567 0 0 0.225567 0 0.503498V23.4962C0 23.7742 0.225567 23.9997 0.503498 23.9997H12.7196V15.9803H10.1415C9.91866 15.9803 9.73816 15.7998 9.73816 15.577V12.3259C9.73816 12.1031 9.91866 11.9223 10.1415 11.9223H12.7199V9.6785C12.7199 6.72195 14.5816 4.81168 17.4626 4.81168L20.0274 4.81571C20.2497 4.81596 20.4302 4.99647 20.4302 5.21901V8.23774C20.4302 8.46053 20.2497 8.64104 20.0269 8.64104L18.2991 8.64179C17.1086 8.64179 16.8906 9.10602 16.8906 10.0201V11.9223H19.9063C20.0133 11.9223 20.1158 11.9649 20.1915 12.0407C20.2671 12.1164 20.3096 12.2189 20.3096 12.3259L20.3086 15.5772C20.3086 15.8 20.1281 15.9808 19.9053 15.9808H16.8904V24H23.4962C23.7742 24 23.9997 23.7744 23.9997 23.4965V0.503498C24 0.225315 23.7747 0 23.4965 0Z" fill="#3B5998"/>
-            </g>
-            <defs>
-                <clipPath id="clip0_519_1487">
-                    <rect width="24" height="24" fill="white"/>
-                </clipPath>
-            </defs>
-        </svg>
-    )
-}
+const Facebook = ({ width = "24", height = "24", disabled, loading }) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_519_1487)">
+        <path
+          d="M23.4965 0H0.503498C0.225567 0 0 0.225567 0 0.503498V23.4962C0 23.7742 0.225567 23.9997 0.503498 23.9997H12.7196V15.9803H10.1415C9.91866 15.9803 9.73816 15.7998 9.73816 15.577V12.3259C9.73816 12.1031 9.91866 11.9223 10.1415 11.9223H12.7199V9.6785C12.7199 6.72195 14.5816 4.81168 17.4626 4.81168L20.0274 4.81571C20.2497 4.81596 20.4302 4.99647 20.4302 5.21901V8.23774C20.4302 8.46053 20.2497 8.64104 20.0269 8.64104L18.2991 8.64179C17.1086 8.64179 16.8906 9.10602 16.8906 10.0201V11.9223H19.9063C20.0133 11.9223 20.1158 11.9649 20.1915 12.0407C20.2671 12.1164 20.3096 12.2189 20.3096 12.3259L20.3086 15.5772C20.3086 15.8 20.1281 15.9808 19.9053 15.9808H16.8904V24H23.4962C23.7742 24 23.9997 23.7744 23.9997 23.4965V0.503498C24 0.225315 23.7747 0 23.4965 0Z"
+          className={`
+              ${disabled && "fill-gray-300"}
+              ${loading && "fill-[#3B5998]"}
+              ${!loading && !disabled && "fill-[#3B5998]"}
+  
+            `}
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_519_1487">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
 
 const GitHub = ({ color }) => {
     return (
@@ -1054,23 +1069,62 @@ const MagnifyingGlass = () => {
 
 }
 
-const Microsoft = ({width="24", height="24"}) => {
-    return (<svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_519_1103)">
-                <path d="M0 0H24V24H0V0Z" fill="#F3F3F3"/>
-                <path d="M1.04348 1.04346H11.4783V11.4782H1.04348V1.04346Z" fill="#F35325"/>
-                <path d="M12.5217 1.04346H22.9565V11.4782H12.5217V1.04346Z" fill="#81BC06"/>
-                <path d="M1.04348 12.5217H11.4783V22.9565H1.04348V12.5217Z" fill="#05A6F0"/>
-                <path d="M12.5217 12.5217H22.9565V22.9565H12.5217V12.5217Z" fill="#FFBA08"/>
-            </g>
-            <defs>
-                <clipPath id="clip0_519_1103">
-                    <rect width="24" height="24" fill="white"/>
-                </clipPath>
-            </defs>
-        </svg>
-    )
-}
+const Microsoft = ({ width = "24", height = "24", loading, disabled }) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_519_1103)">
+        <path d="M0 0H24V24H0V0Z" fill="#F3F3F3" />
+        <path
+          d="M1.04348 1.04346H11.4783V11.4782H1.04348V1.04346Z"
+          className={`
+              ${disabled && "fill-gray-300"}
+              ${loading && "fill-[#F35325]"}
+              ${!loading && !disabled && "fill-[#F35325]"}
+  
+            `}
+        />
+        <path
+          d="M12.5217 1.04346H22.9565V11.4782H12.5217V1.04346Z"
+          className={`
+              ${disabled && "fill-gray-300"}
+              ${loading && "fill-[#81BC06]"}
+              ${!loading && !disabled && "fill-[#81BC06]"}
+  
+            `}
+        />
+        <path
+          d="M1.04348 12.5217H11.4783V22.9565H1.04348V12.5217Z"
+          className={`
+              ${disabled && "fill-gray-300"}
+              ${loading && "fill-[#05A6F0]"}
+              ${!loading && !disabled && "fill-[#05A6F0]"}
+  
+            `}
+        />
+        <path
+          d="M12.5217 12.5217H22.9565V22.9565H12.5217V12.5217Z"
+          className={`
+              ${disabled && "fill-gray-300"}
+              ${loading && "fill-[#FFBA08]"}
+              ${!loading && !disabled && "fill-[#FFBA08]"}
+  
+            `}
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_519_1103">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
 
 const Reddit = ({ height = 24, width = 24, disabled, loading }) => {
   return (
@@ -1199,29 +1253,6 @@ const TransactionProcessing = () => {
         </svg>
     )
 }
-
-{/* const TwitchLogoPurple = ({ height = 24, width = 24, loading }) => {
-    return (
-        <svg
-            width={width}
-            height={height}
-            viewBox="0 0 21 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M4.28571 0L0 4.28571V19.7143H5.14286V24L9.42857 19.7143H12.8571L20.5714 12V0H4.28571ZM18.8571 11.1429L15.4286 14.5714H12L9 17.5714V14.5714H5.14286V1.71429H18.8571V11.1429ZM16.2856 4.71429H14.5713V9.85714H16.2856V4.71429ZM9.85742 4.71429H11.5717V9.85714H9.85742V4.71429Z"
-                className={`${
-                    loading?.includes('TWITCH')
-                        ? 'overflow-visible fill-white'
-                        : 'overflow-visible group-hover:fill-white fill-[#9146FF]'
-                }`}
-            />
-        </svg>
-    )
-} */}
 
 const TwitchLogoPurple = ({ loading, disabled, width, height }) => {
   return (
