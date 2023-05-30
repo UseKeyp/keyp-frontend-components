@@ -281,6 +281,30 @@ const loading = false;
                 </div>
             </div>
         </Button>
+        <Button
+            onClick={() => onSubmitSignUp('NODE_OIDC')}
+            disabled={loading === 'NODE_OIDC'}
+            classNameVariant={`${
+                loading === 'NODE_OIDC'
+                    ? 'bg-[#005285] border-[#005285] justify-center'
+                    : 'hover:bg-[#005285] hover:border-[#005285] justify-center'
+            }`}
+            borderColor="border-[#E5E7EB]"
+            fluid={false}
+            size="square"
+            position="start"
+            alt="epic_games"
+        >
+            <div className="group flex flex-row gap-x-4 hover:text-white">
+                <div className="flex">
+                    <Icon
+                        height="24"
+                        width="24"
+                        name="keypcircle"
+                    />
+                </div>
+            </div>
+        </Button>
         </div>
 </div>
 ```
