@@ -257,6 +257,30 @@ const loading = false;
                 </div>
             </div>
         </Button>
+        <Button
+            onClick={() => onSubmitSignUp('EPIC_GAMES')}
+            disabled={loading === 'EPIC_GAMES'}
+            classNameVariant={`${
+                loading === 'EPIC_GAMES'
+                    ? 'bg-[#E9EBED] border-[#E9EBED] justify-center'
+                    : 'hover:bg-[#E9EBED] hover:border-[#E9EBED] justify-center'
+            }`}
+            borderColor="border-[#E5E7EB]"
+            fluid={false}
+            size="square"
+            position="start"
+            alt="epic_games"
+        >
+            <div className="group flex flex-row gap-x-4 hover:text-white">
+                <div className="flex">
+                    <Icon
+                        height="24"
+                        width="24"
+                        name="epic_games"
+                    />
+                </div>
+            </div>
+        </Button>
         </div>
 </div>
 ```
