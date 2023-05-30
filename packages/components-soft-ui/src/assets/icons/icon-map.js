@@ -744,61 +744,61 @@ const GitHub = ({ color }) => {
     )
 }
 
-const Google = ({ height = '24', width = '24', loading }) => {
-    return (
-        <svg
-            width={width}
-            height={height}
-            viewBox="0 0 19 24"
-            className={`${
-                loading?.includes('GOOGLE')
-                    ? 'overflow-visible fill-white'
-                    : 'overflow-visible group-hover:fill-white'
-            }`}
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <g width={width} height={height} clipPath="url(#clip0_738_1873)">
-                <path
-                    d="M5.31891 14.5036L4.4835 17.6223L1.43011 17.6869C0.517594 15.9944 0 14.0579 0 12.0001C0 10.0102 0.483938 8.1337 1.34175 6.48141H1.34241L4.06078 6.97978L5.25159 9.68185C5.00236 10.4085 4.86652 11.1885 4.86652 12.0001C4.86661 12.881 5.02617 13.725 5.31891 14.5036Z"
-                    className={`${
-                        loading?.includes('GOOGLE')
-                            ? 'fill-white'
-                            : 'fill-[#FBBB00] group-hover:fill-white'
-                    }`}
-                />
-                <path
-                    d="M23.7902 9.75801C23.9281 10.4839 23.9999 11.2336 23.9999 11.9998C23.9999 12.8589 23.9096 13.6969 23.7375 14.5053C23.1534 17.256 21.627 19.658 19.5125 21.3578L19.5118 21.3571L16.0879 21.1824L15.6033 18.1574C17.0064 17.3345 18.1029 16.0468 18.6805 14.5053H12.2637V9.75801H18.7741H23.7902Z"
-                    className={`${
-                        loading?.includes('GOOGLE')
-                            ? 'fill-white'
-                            : 'fill-[#518EF8] group-hover:fill-white'
-                    }`}
-                />
-                <path
-                    d="M19.5114 21.3574L19.512 21.3581C17.4556 23.011 14.8432 24 11.9995 24C7.4296 24 3.45642 21.4458 1.4296 17.6869L5.31839 14.5036C6.33179 17.2082 8.9408 19.1335 11.9995 19.1335C13.3142 19.1335 14.5459 18.7781 15.6028 18.1576L19.5114 21.3574Z"
-                    className={`${
-                        loading?.includes('GOOGLE')
-                            ? 'fill-white'
-                            : 'fill-[#28B446] group-hover:fill-white'
-                    }`}
-                />
-                <path
-                    d="M19.6595 2.76262L15.772 5.94525C14.6781 5.26153 13.3851 4.86656 11.9999 4.86656C8.87197 4.86656 6.21416 6.88017 5.25153 9.68175L1.3423 6.48131H1.34164C3.3388 2.63077 7.36208 0 11.9999 0C14.9115 0 17.5812 1.03716 19.6595 2.76262Z"
-                    className={`${
-                        loading?.includes('GOOGLE')
-                            ? 'fill-white'
-                            : 'fill-[#F14336] group-hover:fill-white'
-                    }`}
-                />
-            </g>
-            <defs>
-                <clipPath id="clip0_738_1873">
-                    <rect width="24" height="24" fill="white" />
-                </clipPath>
-            </defs>
-        </svg>
-    )
-}
+const Google = ({ height = "24", width = "24", loading, disabled }) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 19 24"
+      className={`overflow-visible
+        ${loading && "fill-white"}
+        ${disabled && !loading && "fill-gray-300"} 
+        ${!loading && !disabled && "group-hover:fill-white"}
+      `}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g width={width} height={height} clipPath="url(#clip0_738_1873)">
+        <path
+          d="M5.31891 14.5036L4.4835 17.6223L1.43011 17.6869C0.517594 15.9944 0 14.0579 0 12.0001C0 10.0102 0.483938 8.1337 1.34175 6.48141H1.34241L4.06078 6.97978L5.25159 9.68185C5.00236 10.4085 4.86652 11.1885 4.86652 12.0001C4.86661 12.881 5.02617 13.725 5.31891 14.5036Z"
+          className={`
+          ${loading && "fill-white"}
+          ${!loading && !disabled && "fill-[#FBBB00] group-hover:fill-white"}
+          ${disabled && !loading && "fill-gray-300"} 
+          `}
+        />
+        <path
+          d="M23.7902 9.75801C23.9281 10.4839 23.9999 11.2336 23.9999 11.9998C23.9999 12.8589 23.9096 13.6969 23.7375 14.5053C23.1534 17.256 21.627 19.658 19.5125 21.3578L19.5118 21.3571L16.0879 21.1824L15.6033 18.1574C17.0064 17.3345 18.1029 16.0468 18.6805 14.5053H12.2637V9.75801H18.7741H23.7902Z"
+          className={`
+          ${loading && "fill-white"}
+          ${!loading && !disabled && "fill-[#518EF8] group-hover:fill-white"}
+          ${disabled && !loading && "fill-gray-300"} 
+          `}
+        />
+        <path
+          d="M19.5114 21.3574L19.512 21.3581C17.4556 23.011 14.8432 24 11.9995 24C7.4296 24 3.45642 21.4458 1.4296 17.6869L5.31839 14.5036C6.33179 17.2082 8.9408 19.1335 11.9995 19.1335C13.3142 19.1335 14.5459 18.7781 15.6028 18.1576L19.5114 21.3574Z"
+          className={`
+          ${loading && "fill-white"}
+          ${!loading && !disabled && "fill-[#28B446] group-hover:fill-white"}
+          ${disabled && !loading && "fill-gray-300"} 
+          `}
+        />
+        <path
+          d="M19.6595 2.76262L15.772 5.94525C14.6781 5.26153 13.3851 4.86656 11.9999 4.86656C8.87197 4.86656 6.21416 6.88017 5.25153 9.68175L1.3423 6.48131H1.34164C3.3388 2.63077 7.36208 0 11.9999 0C14.9115 0 17.5812 1.03716 19.6595 2.76262Z"
+          className={`
+          ${loading && "fill-white"}
+          ${!loading && !disabled && "fill-[#F14336] group-hover:fill-white"}
+          ${disabled && !loading && "fill-gray-300"} 
+          `}
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_738_1873">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
 
 const KeypCircle = ({ height, width, loading }) => {
     return (
