@@ -80,6 +80,13 @@ const colorVariants = {
     hoverBorder: "hover:border-gray-2400",
     activeTextColor: "text-white",
   },
+  NODE_OIDC: {
+    hover: "hover:bg-[#005285]",
+    active: "bg-[#005285]",
+    borderColor: "border-[#005285]",
+    hoverBorder: "hover:border-[#005285]",
+    activeTextColor: "text-white",
+  },
   black: {
     hover: "hover:bg-black",
     active: "bg-black",
@@ -111,6 +118,8 @@ const getLabelFromProvider = (provider) => {
       return "Chess.com";
     case "EPIC_GAMES":
       return "Epic Games";
+    case "NODE_OIDC":
+      return "Test Provider";
     default:
       return `${provider[0]}${provider.substring(1).toLowerCase()}`;
   }
@@ -122,6 +131,8 @@ const getIconName = (provider) => {
       return "chess_pawn";
     case "TWITCH":
       return "twitch_logo_purple";
+    case "NODE_OIDC":
+      return "keypcircle"
     default:
       return `${provider.toLowerCase()}`;
   }
