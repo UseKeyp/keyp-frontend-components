@@ -16,6 +16,17 @@ module.exports =
                     "2xl-max": {max: "1320px"},
                 },
                 colors: {
+                    brand: {
+                        discord: "#5865F2",
+                        google: "#4285F4",
+                        twitter: "#1DA1F2",
+                        twitch: "#9146FF",
+                        chess: "#6C9D41",
+                        epic_games: "#2F2D2E",
+                        reddit: "#FF4500",
+                        facebook: "#3B5998",
+                    },
+
                     slate: {
                         50: "#f8fafc",
                         100: "#dee2e6",
